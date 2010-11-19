@@ -65,7 +65,6 @@ class Zend_View_Helper_HeadTitle extends Zend_View_Helper_Placeholder_Container_
      *
      * @param  string $title
      * @param  string $setType
-     * @param  string $separator
      * @return Zend_View_Helper_HeadTitle
      */
     public function headTitle($title = null, $setType = null)
@@ -140,7 +139,7 @@ class Zend_View_Helper_HeadTitle extends Zend_View_Helper_Placeholder_Container_
         return $this;
     }
 
-    /*
+    /**
      * Retrieve translation object
      *
      * If none is currently registered, attempts to pull it from the registry
