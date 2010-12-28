@@ -52,11 +52,19 @@ class Zend_Service_WindowsAzure_Diagnostics_ConfigurationPerformanceCounters
     /**
      * Constructor
      *
+<<<<<<< HEAD
      * @param    int        $bufferQuotaInMB                    Buffer quota in MB
      * @param    int        $scheduledTransferPeriodInMinutes    Scheduled transfer period in minutes
      */
     public function __construct($bufferQuotaInMB = 0, $scheduledTransferPeriodInMinutes = 0)
     {    
+=======
+	 * @param	int		$bufferQuotaInMB					Buffer quota in MB
+	 * @param	int		$scheduledTransferPeriodInMinutes	Scheduled transfer period in minutes
+	 */
+    public function __construct($bufferQuotaInMB = 0, $scheduledTransferPeriodInMinutes = 0)
+    {	
+>>>>>>> 12966e4... ZF-10669 Replace CRLF with LF, trim trailing whitespace
         $this->_data = array(
             'bufferquotainmb'                    => $bufferQuotaInMB,
             'scheduledtransferperiodinminutes'     => $scheduledTransferPeriodInMinutes,
@@ -64,22 +72,39 @@ class Zend_Service_WindowsAzure_Diagnostics_ConfigurationPerformanceCounters
         );
     }
 
+<<<<<<< HEAD
     /**
      * Add subscription
      *
       * @param    string    $counterSpecifier                    Counter specifier
       * @param    int        $sampleRateInSeconds                Sample rate in seconds
      */
+=======
+	/**
+	 * Add subscription
+	 *
+ 	 * @param	string	$counterSpecifier					Counter specifier
+ 	 * @param	int		$sampleRateInSeconds				Sample rate in seconds
+	 */
+>>>>>>> 12966e4... ZF-10669 Replace CRLF with LF, trim trailing whitespace
     public function addSubscription($counterSpecifier, $sampleRateInSeconds = 1)
     {
         $this->_data['subscriptions'][$counterSpecifier] = new Zend_Service_WindowsAzure_Diagnostics_PerformanceCounterSubscription($counterSpecifier, $sampleRateInSeconds);
     }
 
+<<<<<<< HEAD
     /**
      * Remove subscription
      *
       * @param    string    $counterSpecifier                    Counter specifier
      */
+=======
+	/**
+	 * Remove subscription
+	 *
+ 	 * @param	string	$counterSpecifier					Counter specifier
+	 */
+>>>>>>> 12966e4... ZF-10669 Replace CRLF with LF, trim trailing whitespace
     public function removeSubscription($counterSpecifier)
     {
         if (isset($this->_data['subscriptions'][$counterSpecifier])) {

@@ -75,10 +75,17 @@ class Zend_Service_WindowsAzure_Diagnostics_ConfigurationDataSources
     /**
      * Constructor
      *
+<<<<<<< HEAD
      * @param    int    $overallQuotaInMB                Overall quota in MB
      */
     public function __construct($overallQuotaInMB = 0)
     {    
+=======
+	 * @param	int	$overallQuotaInMB				Overall quota in MB
+	 */
+    public function __construct($overallQuotaInMB = 0)
+    {	
+>>>>>>> 12966e4... ZF-10669 Replace CRLF with LF, trim trailing whitespace
         $this->_data = array(
             'overallquotainmb'                => $overallQuotaInMB,
             'logs'                             => new Zend_Service_WindowsAzure_Diagnostics_ConfigurationLogs(),
