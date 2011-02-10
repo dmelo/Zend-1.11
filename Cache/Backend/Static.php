@@ -123,7 +123,7 @@ class Zend_Cache_Backend_Static
      */
     public function load($id, $doNotTestCacheValidity = false)
     {
-        if (empty($id)) {
+        if (($id = (string)$id) === '') {
             $id = $this->_detectId();
         } else {
             $id = $this->_decodeId($id);
@@ -136,7 +136,7 @@ class Zend_Cache_Backend_Static
         }
 
         $fileName = basename($id);
-        if (empty($fileName)) {
+        if ($fileName === '') {
             $fileName = $this->_options['index_filename'];
         }
         $pathName = $this->_options['public_dir'] . dirname($id);
@@ -163,7 +163,7 @@ class Zend_Cache_Backend_Static
         }
 
         $fileName = basename($id);
-        if (empty($fileName)) {
+        if ($fileName === '') {
             $fileName = $this->_options['index_filename'];
         }
         if ($this->_tagged === null && $tagged = $this->getInnerCache()->load(self::INNER_CACHE_NAME)) {
@@ -211,14 +211,14 @@ class Zend_Cache_Backend_Static
         }
 
         clearstatcache();
-        if ($id === null || strlen($id) == 0) {
+        if (($id = (string)$id) === '') {
             $id = $this->_detectId();
         } else {
             $id = $this->_decodeId($id);
         }
 
         $fileName = basename($id);
-        if (empty($fileName)) {
+        if ($fileName === '') {
             $fileName = $this->_options['index_filename'];
         }
 
@@ -308,7 +308,7 @@ class Zend_Cache_Backend_Static
         } else {
             $extension = $this->_options['file_extension'];
         }
-        if (empty($fileName)) {
+        if ($fileName === '') {
             $fileName = $this->_options['index_filename'];
         }
         $pathName = $this->_options['public_dir'] . dirname($id);
@@ -333,7 +333,7 @@ class Zend_Cache_Backend_Static
             Zend_Cache::throwException('Invalid cache id: does not match expected public_dir path');
         }
         $fileName = basename($id);
-        if (empty($fileName)) {
+        if ($fileName === '') {
             $fileName = $this->_options['index_filename'];
         }
         $pathName  = $this->_options['public_dir'] . dirname($id);
