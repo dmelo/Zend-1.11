@@ -891,6 +891,10 @@ class Zend_Http_Client
      */
     public function getAdapter()
     {
+         if (null === $this->adapter) {
+            $this->setAdapter($this->config['adapter']);
+        }
+
         return $this->adapter;
     }
 
